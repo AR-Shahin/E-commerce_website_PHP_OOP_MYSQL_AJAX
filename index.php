@@ -166,12 +166,9 @@
                                     <div class="row product-listting" style="margin-bottom:30px;">
                                         <div id="recomand_iteams_front"></div>
                                     </div>
-
                                 </div>
                             </div>
-
                     </div>
-
         </section>
         </div>
         </div>
@@ -214,22 +211,12 @@
 <h3>Special Offer</h3>
 </div>-->
                         <div class="Last-post">
-                            <ul class="shop-res-items">
-                                <li>
+                            <ul class="shop-res-items" id="special_products">
+                                <!-- <li>
                                     <a href="#"><img src="img/small/50.jpg" alt=""></a>
                                     <h6><a href="#">Stockholm Chair high Mosta gruancy</a></h6>
                                     <span class="sale-date">$28.00</span>
-                                </li>
-                                <li>
-                                    <a href="#"><img src="img/small/51.jpg" alt=""></a>
-                                    <h6><a href="#">Stockholm Chair high Mosta gruancy</a></h6>
-                                    <span class="sale-date">$40.00</span>
-                                </li>
-                                <li>
-                                    <a href="#"><img src="img/small/52.jpg" alt=""></a>
-                                    <h6><a href="#">Stockholm Chair high Mosta gruancy</a></h6>
-                                    <span class="sale-date">$150.00</span>
-                                </li>
+                                </li>  -->
                             </ul>
                         </div>
                     </div>
@@ -242,22 +229,8 @@
 <h3>Best Sellers</h3>
 </div>-->
                         <div class="Last-post">
-                            <ul class="shop-res-items">
-                                <li>
-                                    <a href="#"><img src="img/small/53.jpg" alt=""></a>
-                                    <h6><a href="#">Stockholm Chair high Mosta gruancy</a></h6>
-                                    <span class="sale-date">$28.00</span>
-                                </li>
-                                <li>
-                                    <a href="#"><img src="img/small/54.jpg" alt=""></a>
-                                    <h6><a href="#">Stockholm Chair high Mosta gruancy</a></h6>
-                                    <span class="sale-date">$40.00</span>
-                                </li>
-                                <li>
-                                    <a href="#"><img src="img/small/55.jpg" alt=""></a>
-                                    <h6><a href="#">Stockholm Chair high Mosta gruancy</a></h6>
-                                    <span class="sale-date">$150.00</span>
-                                </li>
+                            <ul class="shop-res-items" id="feature_product">
+
                             </ul>
                         </div>
                     </div>
@@ -270,22 +243,7 @@
 <h3>Featured</h3>
 </div>-->
                         <div class="Last-post">
-                            <ul class="shop-res-items">
-                                <li>
-                                    <a href="#"><img src="img/small/56.jpg" alt=""></a>
-                                    <h6><a href="#">Stockholm Chair high Mosta gruancy</a></h6>
-                                    <span class="sale-date">$28.00</span>
-                                </li>
-                                <li>
-                                    <a href="#"><img src="img/small/57.jpg" alt=""></a>
-                                    <h6><a href="#">Stockholm Chair high Mosta gruancy</a></h6>
-                                    <span class="sale-date">$40.00</span>
-                                </li>
-                                <li>
-                                    <a href="#"><img src="img/small/55.jpg" alt=""></a>
-                                    <h6><a href="#">Stockholm Chair high Mosta gruancy</a></h6>
-                                    <span class="sale-date">$150.00</span>
-                                </li>
+                            <ul class="shop-res-items" id="f_product">
                             </ul>
                         </div>
                     </div>
@@ -298,22 +256,7 @@
 <h3>Sales</h3>
 </div>-->
                         <div class="Last-post">
-                            <ul class="shop-res-items">
-                                <li>
-                                    <a href="#"><img src="img/small/55.jpg" alt=""></a>
-                                    <h6><a href="#">Stockholm Chair high Mosta gruancy</a></h6>
-                                    <span class="sale-date">$28.00</span>
-                                </li>
-                                <li>
-                                    <a href="#"><img src="img/small/58.jpg" alt=""></a>
-                                    <h6><a href="#">Stockholm Chair high Mosta gruancy</a></h6>
-                                    <span class="sale-date">$40.00</span>
-                                </li>
-                                <li>
-                                    <a href="#"><img src="img/small/50.jpg" alt=""></a>
-                                    <h6><a href="#">Stockholm Chair high Mosta gruancy</a></h6>
-                                    <span class="sale-date">$150.00</span>
-                                </li>
+                            <ul class="shop-res-items" id="top_f_products">
                             </ul>
                         </div>
                     </div>

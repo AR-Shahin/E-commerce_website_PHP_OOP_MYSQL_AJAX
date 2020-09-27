@@ -237,4 +237,23 @@ class Manage extends Database
             return false;
         }
     }
+
+    public function getBottomProduct($case){
+        if($case == 'FET'){
+            $sql = "SELECT p.`product_id`,p.productname,c.catname,b.brandname,p.price,p.quantity,p.add_date,p.status,p.`image`,p.`keywords`,p.`type`,p.`description` FROM products p,brands b,categories c WHERE p.`brand_id` = b.`brand_id` AND p.`cat_id` = c.`cat_id` AND `type` = 0 ORDER BY RAND() LIMIT 0 ,3 ";
+        }else if($case == 'TOP'){
+            $sql = "SELECT p.`product_id`,p.productname,c.catname,b.brandname,p.price,p.quantity,p.add_date,p.status,p.`image`,p.`keywords`,p.`type`,p.`description` FROM products p,brands b,categories c WHERE p.`brand_id` = b.`brand_id` AND p.`cat_id` = c.`cat_id` AND `type` = 2 ORDER BY RAND() LIMIT 0 ,3 ";
+        } else if($case == 'NEW'){
+            $sql = "SELECT p.`product_id`,p.productname,c.catname,b.brandname,p.price,p.quantity,p.add_date,p.status,p.`image`,p.`keywords`,p.`type`,p.`description` FROM products p,brands b,categories c WHERE p.`brand_id` = b.`brand_id` AND p.`cat_id` = c.`cat_id` AND type = 1 ORDER BY RAND() LIMIT 0 ,3 ";
+        }
+        $result = $this->con->query($sql) or die($this->con->error);
+        $rows = array();
+        if($result->num_rows > 0){
+            while ($row = $result->fetch_assoc()) {
+                $rows[] = $row;
+            }
+        }
+        return $rows;
+
+    }
 }

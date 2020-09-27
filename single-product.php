@@ -77,7 +77,7 @@ $data = $obM->getSingleProduct($id);
                                 <form class="variations_form cart" method="post">
 
 
-                                    <a id="add_to_cart" fpid =<?= $data['product_id']?> type="submit" class="cart-button">Add to cart</a>
+                                    <a id="add_to_cart" fpid =<?= $data['product_id']?> type="submit" class="cart-button" style="margin:10px 0;display: inline-block;">Add to cart</a>
 
                                 </form>
 

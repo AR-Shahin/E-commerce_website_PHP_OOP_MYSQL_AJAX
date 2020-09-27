@@ -9,7 +9,7 @@
 				<div class="row">
 					<div class="col-lg-12">
 						<div class="kat-shoe-bg imgframe6">
-							<img src="img/large-banner-4.png" alt="" />
+							<img src="uploads/s.jpg" width="100%" alt="" />
 						</div>
 					</div>
 				</div>
@@ -51,146 +51,9 @@
 					</div>
 				</div>
 
-				<div id="shop-all" class="row">
-					<!-- Product Item #1 -->
-					<div class="col-xs-12 col-sm-6 col-md-4 product-item filter-best">
-						<div class="product-img">
-							<img src="img/shop/index2_product1.png" alt="product">
-							<div class="product-hover">
-								<div class="product-cart">
-									<a class="btn btn-secondary btn-block" href="#">Add To Cart</a>
-								</div>
-							</div>
-						</div>
-						<!-- .product-img end -->
-						<div class="product-bio">
-							<h4>
-								<a href="#">CST/Berger</a>
-							</h4>
-							<p class="product-price">$68.00</p>
-						</div>
-						<!-- .product-bio end -->
-
-					</div>
-					<!-- .product-item end -->
-
-					<!-- Product Item #2 -->
-					<div class="col-xs-12 col-sm-6 col-md-4 product-item filter-sale">
-						<div class="product-img">
-							<img src="img/shop/index2_product2.png" alt="product">
-							<div class="product-sale">
-								sale
-							</div>
-							<div class="product-hover">
-								<div class="product-cart">
-									<a class="btn btn-secondary btn-block" href="#">Add To Cart</a>
-								</div>
-							</div>
-						</div>
-						<!-- .product-img end -->
-						<div class="product-bio">
-							<h4>
-								<a href="#">Titan Measures</a>
-							</h4>
-							<p class="product-price">
-								<span>$40.00</span>
-								$32.00</p>
-						</div>
-						<!-- .product-bio end -->
-
-					</div>
-					<!-- .product-item end -->
-
-					<!-- Product Item #3 -->
-					<div class="col-xs-12 col-sm-6 col-md-4 product-item filter-best">
-						<div class="product-img">
-							<img src="img/shop/index2_product3.png" alt="product">
-							<div class="product-hover">
-								<div class="product-cart">
-									<a class="btn btn-secondary btn-block" href="#">Add To Cart</a>
-								</div>
-							</div>
-						</div>
-						<!-- .product-img end -->
-						<div class="product-bio">
-							<h4>
-								<a href="#">Charger/Radio</a>
-							</h4>
-							<p class="product-price">$180.00</p>
-						</div>
-						<!-- .product-bio end -->
-
-					</div>
-					<!-- .product-item end -->
-
-					<!-- Product Item #4 -->
-					<div class="col-xs-12 col-sm-6 col-md-4 product-item filter-featured">
-						<div class="product-img">
-							<img src="img/shop/index2_product4.png" alt="product">
-							<div class="product-hover">
-								<div class="product-cart">
-									<a class="btn btn-secondary btn-block" href="#">Add To Cart</a>
-								</div>
-							</div>
-						</div>
-						<!-- .product-img end -->
-						<div class="product-bio">
-							<h4>
-								<a href="#">Plate Compactor</a>
-							</h4>
-							<p class="product-price">$230.00</p>
-						</div>
-						<!-- .product-bio end -->
-
-					</div>
-					<!-- .product-item end -->
-
-					<!-- Product Item #5 -->
-					<div class="col-xs-12 col-sm-6 col-md-4 product-item filter-best">
-						<div class="product-img">
-							<img src="img/shop/index2_product5.png" alt="product">
-							<div class="product-hover">
-								<div class="product-cart">
-									<a class="btn btn-secondary btn-block" href="#">Add To Cart</a>
-								</div>
-							</div>
-						</div>
-						<!-- .product-img end -->
-						<div class="product-bio">
-							<h4>
-								<a href="#">Black Tape</a>
-							</h4>
-							<p class="product-price">$12.00</p>
-						</div>
-						<!-- .product-bio end -->
-
-					</div>
-					<!-- .product-item end -->
-
-					<!-- Product Item #6 -->
-					<div class="col-xs-12 col-sm-6 col-md-4 product-item filter-best filter-featured">
-						<div class="product-img">
-							<img src="img/shop/index2_product6.png" alt="product">
-							<div class="product-hover">
-								<div class="product-cart">
-									<a class="btn btn-secondary btn-block" href="#">Add To Cart</a>
-								</div>
-							</div>
-						</div>
-						<!-- .product-img end -->
-						<div class="product-bio">
-							<h4>
-								<a href="#">ICS Concrete Saw</a>
-							</h4>
-							<p class="product-price">$40.00</p>
-						</div>
-						<!-- .product-bio end -->
-
-					</div>
-					<!-- .product-item end -->
-
-					<!-- Product Item #7 -->
-					<div class="col-xs-12 col-sm-6 col-md-4 product-item filter-featured">
+				<div id="shop-all" class="row" style="margin-top:30px;">
+                    <div id="shop_page_product"></div>
+                    <!-- 	<div class="col-xs-12 col-sm-6 col-md-4 product-item filter-featured">
 						<div class="product-img">
 							<img src="img/shop/index2_product7.png" alt="product">
 							<div class="product-new">
@@ -202,69 +65,16 @@
 								</div>
 							</div>
 						</div>
-						<!-- .product-img end -->
+
 						<div class="product-bio">
 							<h4>
 								<a href="#">NorthStar Asphalt</a>
 							</h4>
 							<p class="product-price">$150.00</p>
 						</div>
-						<!-- .product-bio end -->
+                    -->
 
-					</div>
-					<!-- .product-item end -->
-
-					<!-- Product Item #8 -->
-					<div class="col-xs-12 col-sm-6 col-md-4 product-item filter-best">
-						<div class="product-img">
-							<img src="img/shop/index2_product8.png" alt="product">
-							<div class="product-hover">
-								<div class="product-cart">
-									<a class="btn btn-secondary btn-block" href="#">Add To Cart</a>
-								</div>
-							</div>
-						</div>
-						<!-- .product-img end -->
-						<div class="product-bio">
-							<h4>
-								<a href="#">Keson Fiberglass</a>
-							</h4>
-							<p class="product-price">$550.00</p>
-						</div>
-						<!-- .product-bio end -->
-
-					</div>
-
-
-					<div class="col-xs-12 col-sm-6 col-md-4 product-item filter-featured">
-						<div class="product-img">
-							<img src="img/shop/index2_product1.png" alt="product">
-							<div class="product-new">
-								new
-							</div>
-							<div class="product-hover">
-								<div class="product-cart">
-									<a class="btn btn-secondary btn-block" href="#">Add To Cart</a>
-								</div>
-							</div>
-						</div>
-						<!-- .product-img end -->
-						<div class="product-bio">
-							<h4>
-								<a href="#">NorthStar Asphalt</a>
-							</h4>
-							<p class="product-price">$150.00</p>
-						</div>
-						<!-- .product-bio end -->
-
-					</div>
-
-					<!-- .product-item end -->
 				</div>
-
-
-
-
 			</div>
 
 			<aside class="col-md-3 sidebar">

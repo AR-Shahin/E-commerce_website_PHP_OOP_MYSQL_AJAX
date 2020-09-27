@@ -317,6 +317,7 @@ if (isset($_POST["manageProduct"])) {
                 <td><?php echo ucwords($row["productname"]); ?></td>
                 <td><?php echo ucwords($row["catname"]); ?></td>
                 <td><?php echo ucwords($row["brandname"]); ?></td>
+                <td><img width="60px" src="uploads/products/<?php echo $row["image"];?>" alt=""></td>
                 <td><?php echo $row["price"]; ?></td>
                 <td><?php echo $row["quantity"]; ?></td>
                 <td><?php echo $row["add_date"]; ?></td>
@@ -565,6 +566,39 @@ if (isset($_POST["random_suggest_product"])) {
         }
         ?>
         <!--  <tr><td colspan="5"><?php #echo $pagination; ?></td></tr>-->
+        <?php
+        exit();
+    }
+}
+
+
+if (isset($_POST["shop_Page_Product"])) {
+    $result = $obM->manageRecordWithPagination("products",$_POST["pageno"],9);
+    $rows = $result["rows"];
+    $pagination = $result["pagination"];
+    if (count($rows) > 0) {
+        $n = ((($_POST["pageno"] - 1) * 5)*2)+1;
+
+        foreach ($rows as $row) {
+            ?>
+            <div class="col-xs-12 col-sm-6 col-md-4 product-item filter-featured">
+            <div class="product-img">
+                <img style="width: 270px;height: 260px;" src="admin/uploads/products/<?=$row['image'] ?>" alt="product">
+                <div class="product-new">
+                    new
+                </div>
+                <div class="product-hover">
+                    <div class="product-cart">
+                        <a id="add_to_cart" class="btn btn-secondary btn-block" fpid =<?= $row['product_id']?>>Add to cart</a>
+                    </div>
+                </div>
+            </div>
+            </div>
+            <?php
+            $n++;
+        }
+        ?>
+        <tr><td colspan="5"><?php echo $pagination; ?></td></tr>
         <?php
         exit();
     }

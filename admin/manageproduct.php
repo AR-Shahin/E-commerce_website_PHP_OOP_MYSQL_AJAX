@@ -14,6 +14,7 @@ if(!isset($_SESSION['user_id'])){
             <th>Product name</th>
             <th>Category</th>
             <th>Brand</th>
+            <th>Image</th>
             <th>Price</th>
             <th>Quantity</th>
             <th>Date</th>

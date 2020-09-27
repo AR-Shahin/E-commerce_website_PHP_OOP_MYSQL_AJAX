@@ -24,6 +24,29 @@ $(document).ready(function () {
             }
         })
     };
+    //-----------------------------------------------------------------
+
+
+
+    shop_Page_Product(1);
+    function shop_Page_Product(pn){
+        $.ajax({
+            url:"admin/op/process.php",
+            method : "POST",
+            cache:false,
+            data : {shop_Page_Product:1,pageno:pn},
+            success : function(data){
+
+                $("#shop_page_product").html(data);
+            }
+        })
+    };
+    $("body").delegate(".page-link","click",function(){
+        var pn = $(this).attr("pn");
+        shop_Page_Product(pn);
+    });
+
+    //-------------------------------------------------------------------
     $("body").delegate(".page-link","click",function(){
         var pn = $(this).attr("pn");
         manageProduct(pn);
@@ -527,7 +550,53 @@ $(document).ready(function () {
                 }
             }
         })
-    })
+    });
+
+    get_special_product();
+    function get_special_product() {
+        $.ajax({
+            url:"admin/op/action.php",
+            method : "POST",
+            data : {get_special_product:1},
+            success : function(data){
+                $('#special_products').html(data);
+            }
+        })
+    }
+
+    get_feature_product();
+    function get_feature_product() {
+        $.ajax({
+            url:"admin/op/action.php",
+            method : "POST",
+            data : {get_fet_product:1},
+            success : function(data){
+                $('#feature_product').html(data);
+            }
+        })
+    }
+    get_f_product();
+    function get_f_product() {
+        $.ajax({
+            url:"admin/op/action.php",
+            method : "POST",
+            data : {get_fet_product:1},
+            success : function(data){
+                $('#f_product').html(data);
+            }
+        })
+    }
+    get_top_product();
+    function get_top_product() {
+        $.ajax({
+            url:"admin/op/action.php",
+            method : "POST",
+            data : {get_top_product:1},
+            success : function(data){
+                $('#top_f_products').html(data);
+            }
+        })
+    }
     //-----------------------------------------------SWAL..
     function test(a) {
         swal("Test", a, "info");

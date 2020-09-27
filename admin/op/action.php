@@ -458,8 +458,43 @@ if(isset($_POST['get_order_product']) && isset($_SESSION['cus_id'])) {
 if(isset($_POST['delete_user_order_product'])){
     $userID = $_SESSION['cus_id'];
     $pid = $_POST['pid'];
-   echo $obM->update_record('orders',["cus_id" => $userID,"pro_id" => $pid],["status" => 3]);
+    echo $obM->update_record('orders',["cus_id" => $userID,"pro_id" => $pid],["status" => 3]);
     exit();
+}
+
+//special product
+if(isset($_POST['get_special_product'])) {
+    $rows = $obM->getBottomProduct("TOP");
+    foreach ($rows as $row) { ?>
+        <li>
+            <a href="single-product.php?pid=<?= base64_encode($row['product_id'])?>"><img style="width: 100px;height: 60px;" src="admin/uploads/products/<?= $row['image']?>" alt=""></a>
+            <h6><a href="single-product.php?pid=<?= base64_encode($row['product_id'])?>"><?=$row['productname']?></a></h6>
+            <span class="sale-date">$<?=$row['price']?></span>
+        </li>
+    <?php }
+}
+//special product
+if(isset($_POST['get_fet_product'])) {
+    $rows = $obM->getBottomProduct("NEW");
+    foreach ($rows as $row) { ?>
+        <li>
+            <a href="single-product.php?pid=<?= base64_encode($row['product_id'])?>"><img style="width: 100px;height: 60px;" src="admin/uploads/products/<?= $row['image']?>" alt=""></a>
+            <h6><a href="single-product.php?pid=<?= base64_encode($row['product_id'])?>"><?=$row['productname']?></a></h6>
+            <span class="sale-date">$<?=$row['price']?></span>
+        </li>
+    <?php }
+}
+
+//special product
+if(isset($_POST['get_top_product'])) {
+    $rows = $obM->getBottomProduct("FET");
+    foreach ($rows as $row) { ?>
+        <li>
+            <a href="single-product.php?pid=<?= base64_encode($row['product_id'])?>"><img style="width: 100px;height: 60px;" src="admin/uploads/products/<?= $row['image']?>" alt=""></a>
+            <h6><a href="single-product.php?pid=<?= base64_encode($row['product_id'])?>"><?=$row['productname']?></a></h6>
+            <span class="sale-date">$<?=$row['price']?></span>
+        </li>
+    <?php }
 }
 ?>
 
