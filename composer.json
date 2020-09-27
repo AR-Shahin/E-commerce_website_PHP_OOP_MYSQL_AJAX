@@ -1,0 +1,19 @@
+{
+    "name": "asus/bigecommerce",
+    "authors": [
+        {
+            "name": "AR-Shahin",
+            "email": "mdshainmije96@gmail.com"
+        }
+    ],
+    "require": {},
+    "require-dev":{
+        
+    },
+    "autoload":{
+        "classmap":[],
+        "psr-4":{
+            "App\\":"app\\"
+        }
+    }
+}

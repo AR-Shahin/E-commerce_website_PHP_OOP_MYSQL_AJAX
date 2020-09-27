@@ -1,0 +1,222 @@
+    <!--
+                            <div class="col-md-3 col-sm-6">
+                                <!-- Shopping items -->
+                                <div class="shopping-item">
+                                    <!-- Image -->
+                                    <a href="single-product.html"><img class="img-responsive" src="img/product/p1.jpg" alt="" /></a>
+                                    <!-- Shopping item name / Heading -->
+                                    <h4><a href="single-product.html">Wool Two-Piece Suit</a><span class="color pull-right">$49</span></h4>
+                                    <div class="clearfix"></div>
+                                    <!-- Buy now button -->
+                                    <div class="visible-xs">
+                                        <a class="btn btn-color btn-sm" href="#">Buy Now</a>
+                                    </div>
+                                    <!-- Shopping item hover block & link -->
+                                    <div class="item-hover bg-color hidden-xs">
+                                        <a href="#">Add to cart</a>
+                                    </div>
+                                    <!-- Hot tag -->
+                                    <span class="hot-tag bg-red">NEW</span>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-6">
+                                <!-- Shopping items -->
+                                <div class="shopping-item">
+                                    <!-- Image -->
+                                    <a href="single-product.html"><img class="img-responsive" src="img/product/p1.jpg" alt="" /></a>
+                                    <!-- Shopping item name / Heading -->
+                                    <h4><a href="single-product.html">Vintage Sunglasses</a><span class="color pull-right">$49</span></h4>
+                                    <div class="clearfix"></div>
+                                    <!-- Buy now button -->
+                                    <div class="visible-xs">
+                                        <a class="btn btn-color btn-sm" href="#">Buy Now</a>
+                                    </div>
+                                    <!-- Shopping item hover block & link -->
+                                    <div class="item-hover bg-color hidden-xs">
+                                        <a href="#">Add to cart</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-6">
+                                <!-- Shopping items -->
+                                <div class="shopping-item">
+                                    <!-- Image -->
+                                    <a href="single-product.html"><img class="img-responsive" src="img/product/p1.jpg" alt="" /></a>
+                                    <!-- Shopping item name / Heading -->
+                                    <h4><a href="single-product.html">Nulla luctus</a><span class="color pull-right">$49</span></h4>
+                                    <div class="clearfix"></div>
+                                    <!-- Buy now button -->
+                                    <div class="visible-xs">
+                                        <a class="btn btn-color btn-sm" href="#">Buy Now</a>
+                                    </div>
+                                    <!-- Shopping item hover block & link -->
+                                    <div class="item-hover bg-color hidden-xs">
+                                        <a href="#">Add to cart</a>
+                                    </div>
+                                    <!-- Hot tag -->
+                                    <span class="hot-tag bg-lblue">HOT</span>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-6">
+                                <!-- Shopping items -->
+                                <div class="shopping-item">
+                                    <!-- Image -->
+                                    <a href="single-product.html"><img class="img-responsive" src="img/product/p1.jpg" alt="" /></a>
+                                    <!-- Shopping item name / Heading -->
+                                    <h4><a title="Glory High Shoes" href="single-product.html">Glory High Shoes</a><span class="color pull-right">$49</span></h4>
+                                    <div class="clearfix"></div>
+                                    <!-- Buy now button -->
+                                    <div class="visible-xs">
+                                        <a class="btn btn-color btn-sm" href="#">Buy Now</a>
+                                    </div>
+                                    <!-- Shopping item hover block & link -->
+                                    <div class="item-hover bg-color hidden-xs">
+                                        <a href="#">Add to cart</a>
+                                    </div>
+                                    <!-- Hot tag -->
+                                    <span class="hot-tag bg-red">NEW</span>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-6">
+                                <!-- Shopping items -->
+                                <div class="shopping-item">
+                                    <!-- Image -->
+                                    <a href="#"><img class="img-responsive" src="img/product/shop_item_04.jpg" alt="" /></a>
+                                    <!-- Shopping item name / Heading -->
+                                    <h4><a title="Vintage Stripe Jumper" href="#">Vintage Stripe Jumper</a><span class="color pull-right">$49</span></h4>
+                                    <div class="clearfix"></div>
+                                    <!-- Buy now button -->
+                                    <div class="visible-xs">
+                                        <a class="btn btn-color btn-sm" href="#">Buy Now</a>
+                                    </div>
+                                    <!-- Shopping item hover block & link -->
+                                    <div class="item-hover bg-color hidden-xs">
+                                        <a href="#">Add to cart</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-6">
+                                <!-- Shopping items -->
+                                <div class="shopping-item">
+                                    <!-- Image -->
+                                    <a href="single-product.html"><img class="img-responsive" src="img/product/p1.jpg" alt="" /></a>
+                                    <!-- Shopping item name / Heading -->
+                                    <h4><a href="single-product.html">Solid Blue Polo Shirt</a><span class="color pull-right">$49</span></h4>
+                                    <div class="clearfix"></div>
+                                    <!-- Buy now button -->
+                                    <div class="visible-xs">
+                                        <a class="btn btn-color btn-sm" href="#">Buy Now</a>
+                                    </div>
+                                    <!-- Shopping item hover block & link -->
+                                    <div class="item-hover bg-color hidden-xs">
+                                        <a href="#">Add to cart</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-6">
+                                <!-- Shopping items -->
+                                <div class="shopping-item">
+                                    <!-- Image -->
+                                    <a href="#"><img class="img-responsive" src="img/product/p1.jpg" alt="" /></a>
+                                    <!-- Shopping item name / Heading -->
+                                    <h4><a title="Nulla luctus" href="#">Nulla luctus</a><span class="color pull-right">$49</span></h4>
+                                    <div class="clearfix"></div>
+                                    <!-- Buy now button -->
+                                    <div class="visible-xs">
+                                        <a class="btn btn-color btn-sm" href="#">Buy Now</a>
+                                    </div>
+                                    <!-- Shopping item hover block & link -->
+                                    <div class="item-hover bg-color hidden-xs">
+                                        <a href="#">Add to cart</a>
+                                    </div>
+                                    <!-- Hot tag -->
+                                    <span class="hot-tag bg-green">HOT</span>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-6">
+                                <!-- Shopping items -->
+                                <div class="shopping-item">
+                                    <!-- Image -->
+                                    <a href="#"><img class="img-responsive" src="img/product/p1.jpg" alt="" /></a>
+                                    <!-- Shopping item name / Heading -->
+                                    <h4><a href="#">Quasi Architects</a><span class="color pull-right">$49</span></h4>
+                                    <div class="clearfix"></div>
+                                    <!-- Buy now button -->
+                                    <div class="visible-xs">
+                                        <a class="btn btn-color btn-sm" href="#">Buy Now</a>
+                                    </div>
+                                    <!-- Shopping item hover block & link -->
+                                    <div class="item-hover bg-color hidden-xs">
+                                        <a href="#">Add to cart</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-6">
+                                <!-- Shopping items -->
+                                <div class="shopping-item">
+                                    <!-- Image -->
+                                    <a href="single-product.html"><img class="img-responsive" src="img/product/p1.jpg" alt="" /></a>
+                                    <!-- Shopping item name / Heading -->
+                                    <h4><a href="single-product.html">Quasi Architects</a><span class="color pull-right">$49</span></h4>
+                                    <div class="clearfix"></div>
+                                    <!-- Buy now button -->
+                                    <div class="visible-xs">
+                                        <a class="btn btn-color btn-sm" href="#">Buy Now</a>
+                                    </div>
+                                    <!-- Shopping item hover block & link -->
+                                    <div class="item-hover bg-color hidden-xs">
+                                        <a href="#">Add to cart</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-6">
+                                <!-- Shopping items -->
+                                <div class="shopping-item">
+                                    <!-- Image -->
+                                    <a href="single-product.html"><img class="img-responsive" src="img/product/p1.jpg" alt="" /></a>
+                                    <!-- Shopping item name / Heading -->
+                                    <h4><a href="single-product.html">Quasi Architects</a><span class="color pull-right">$49</span></h4>
+                                    <div class="clearfix"></div>
+                                    <!-- Buy now button -->
+                                    <div class="visible-xs">
+                                        <a class="btn btn-color btn-sm" href="#">Buy Now</a>
+                                    </div>
+                                    <!-- Shopping item hover block & link -->
+                                    <div class="item-hover bg-color hidden-xs">
+                                        <a href="#">Add to cart</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-6">
+                                <!-- Shopping items -->
+                                <div class="shopping-item">
+                                    <!-- Image -->
+                                    <a href="single-product.html"><img class="img-responsive" src="img/product/p1.jpg" alt="" /></a>
+                                    <!-- Shopping item name / Heading -->
+                                    <h4><a href="single-product.html">Quasi Architects</a><span class="color pull-right">$49</span></h4>
+                                    <div class="clearfix"></div>
+                                    <!-- Buy now button -->
+                                    <div class="visible-xs">
+                                        <a class="btn btn-color btn-sm" href="#">Buy Now</a>
+                                    </div>
+                                    <!-- Shopping item hover block & link -->
+                                    <div class="item-hover bg-color hidden-xs">
+                                        <a href="#">Add to cart</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Pagination -->
+                        <div class="shopping-pagination pull-right">
+                            <ul class="pagination">
+                                <li class="disabled"><a href="#">&laquo;</a></li>
+                                <li class="active"><a href="#">1 <span class="sr-only">(current)</span></a></li>
+                                <li><a href="#">2</a></li>
+                                <li><a href="#">3</a></li>
+                                <li><a href="#">4</a></li>
+                                <li><a href="#">5</a></li>
+                                <li><a href="#">&raquo;</a></li>
+                            </ul>
+                        </div>
+                        <!-- Pagination end-->
+                    -->
