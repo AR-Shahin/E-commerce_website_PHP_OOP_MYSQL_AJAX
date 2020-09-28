@@ -1,38 +1,30 @@
 <?php include 'header.php'?>
 <?php
 use App\classes\Manage;
+
 $obM = new Manage();
 $id = base64_decode($_GET['pid']);
 $data = $obM->getSingleProduct($id);
+$cmnt = $obM->countRow('comments',["pro_id" => $id]);
+$ro = $obM->fetch_data_conditions('comments',["pro_id" => $id]);
 
 ?>
-
 <!-- Start Loading -->
 <section class="loading-overlay">
     <div class="Loading-Page">
         <h1 class="loader">Loading...</h1>
     </div>
 </section>
-
-
-
 <!-- start main content -->
 <main class="main-container" style="margin-top:20px;">
     <section class="product_content_area pt-40">
         <!-- start of page content -->
-
         <div class="lookcare-product-single container">
-
             <div class="row">
-
                 <div class="main col-xs-12" role="main">
-
                     <div class=" product">
-
                         <div class="row">
-
                             <div class="col-md-5 col-sm-6 summary-before ">
-
                                 <div class="product-slider product-shop">
                                     <span class="onsale">Sale!</span>
                                     <ul class="slides">
@@ -46,15 +38,11 @@ $data = $obM->getSingleProduct($id);
                                                 <img src="admin/uploads/products/<?= $data['image']?>" class="attachment-shop_single" alt="image" style="width: 100%">
                                             </a>
                                         </li>
-
                                     </ul>
                                 </div>
                             </div>
-
                             <div class="col-sm-6 col-md-7 product-review entry-summary">
-
                                 <h1 class="product_title"><?= $data['productname']?></h1>
-
                                 <div class="woocommerce-product-rating">
                                     <div class="star-rating" title="Rated 4.00 out of 5">
                                         <i class="fa fa-star"></i>
@@ -65,35 +53,19 @@ $data = $obM->getSingleProduct($id);
                                     </div>
                                     <a href="#reviews" class="woocommerce-review-link">(<span class="count">3</span> customer reviews)</a>
                                 </div>
-
                                 <div>
                                     <p class="price"><del><span class="amount">$50</span></del>
                                         <ins><span class="amount">$<?= $data['price']?></span></ins></p>
                                 </div>
-
                                 <p><?= substr($data['description'],0,100)?></p>
-
-
                                 <form class="variations_form cart" method="post">
-
-
                                     <a id="add_to_cart" fpid =<?= $data['product_id']?> type="submit" class="cart-button" style="margin:10px 0;display: inline-block;">Add to cart</a>
-
                                 </form>
-
                                 <div class="product_meta">
-
-
-
                                     <span class="sku_wrapper">SKU: <span class="sku">N/A</span>.</span>
-
-
                                     <span class="posted_in" style="font-size: 18px">Categorie: <a href="#" rel="tag"><?= $data['catname']?></a></span>
                                     <span class="posted_in" style="font-size: 18px">Brand : <a href="#" rel="tag"><?= $data['brandname']?></a></span>
-
-
                                 </div>
-
                                 <div class="share-social-icons">
 
                                     <a href="#" target="_blank" title="Share on Facebook">
@@ -109,17 +81,14 @@ $data = $obM->getSingleProduct($id);
                                         <i class="fa fa-google-plus"></i>
                                     </a>
                                 </div>
-
                             </div>
                             <!-- .summary -->
-
                         </div>
-
                         <div class="wrapper-description">
 
                             <ul class="tabs-nav clearfix">
                                 <li class="active">Description</li>
-                                <li>Review (3)</li>
+                                <li>Review (<?= $cmnt?>)</li>
                             </ul>
                             <div class="tabs-container product-comments">
 
@@ -158,8 +127,6 @@ $data = $obM->getSingleProduct($id);
                                     </section>
                                 </div>
 
-
-
                                 <div class="tab-content">
                                     <div class="panel entry-content">
 
@@ -174,19 +141,17 @@ $data = $obM->getSingleProduct($id);
                                             <div class="row">
                                                 <div class="col-md-6">
                                                     <div id="comments">
-                                                        <h3>3 reviews for Ship Your Idea</h3>
+                                                        <h3><?= $cmnt?> reviews for Ship Your Idea</h3>
+                                                        <ol class="commentlist" id="commentList">
 
-                                                        <ol class="commentlist">
+                                                            <?php
+                                                            if(!$ro == false){
+                                                            foreach ($ro as $row){
+                                                            ?>
                                                             <li class="comment depth-1">
-
                                                                 <div class="comment_container">
-
                                                                     <img alt="gravatar" src="img/temp-images/com-grav1.jpg" class="avatar photo">
                                                                     <div class="comment-text">
-
-
-
-
                                                                         <p class="meta">
                                                                             <span class="star-rating" title="Rated 4.00 out of 5">
                                             <i class="fa fa-star"></i>
@@ -195,91 +160,31 @@ $data = $obM->getSingleProduct($id);
                                             <i class="fa fa-star"></i>
                                             <i class="fa fa-star-o"></i>
                                         </span>
-                                                                            <strong>Stuart</strong> – <time datetime="2013-06-07T13:03:29+00:00">June 7, 2013</time>:
+                                                                            <strong><?=$row['cus_name']?></strong> – <time><?=$row['date']?></time>:
                                                                         </p>
 
                                                                         <div class="description">
-                                                                            <p>Another great quality product that anyone who see’s me wearing has asked where to purchase one of their own.</p>
+                                                                            <p><?=$row['comment']?></p>
                                                                         </div>
                                                                     </div>
                                                                 </div>
                                                             </li>
-                                                            <!-- #comment-## -->
-                                                            <li class="comment  depth-1">
-
-                                                                <div class="comment_container">
-
-                                                                    <img src="img/temp-images/com-grav2.jpg" alt="image" class="avatar photo">
-                                                                    <div class="comment-text">
-
-
-
-
-                                                                        <p class="meta">
-                                                                            <span class="star-rating" title="Rated 4.00 out of 5">
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star-o"></i>
-                                        </span>
-                                                                            <strong>Ryan</strong> – <time datetime="2013-06-07T13:24:52+00:00">June 7, 2013</time>:
-                                                                        </p>
-
-
-                                                                        <div class="description">
-                                                                            <p>This hoodie gets me lots of looks while out in public, I got the blue one and it’s awesome. Not sure if people are looking at my hoodie only, or also at my rocking bod.</p>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </li>
-                                                            <!-- #comment-## -->
-                                                            <li class="comment depth-1">
-
-                                                                <div class="comment_container">
-
-                                                                    <img src="img/temp-images/com-grav3.jpg" alt="image" class="avatar photo">
-                                                                    <div class="comment-text">
-
-                                                                        <div class="star-rating" title="Rated 3 out of 5">
-                                                                        </div>
-
-                                                                        <p class="meta">
-                                                                            <span class="star-rating" title="Rated 4.00 out of 5">
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                        </span>
-                                                                            <strong>Maria</strong> – <time datetime="2013-06-07T15:53:31+00:00">June 7, 2013</time>:
-                                                                        </p>
-
-
-                                                                        <div class="description">
-                                                                            <p>Ship it!</p>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </li>
-                                                            <!-- #comment-## -->
+<?php } } ?>
                                                         </ol>
-
-
                                                     </div>
-
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div id="review_form_wrapper">
                                                         <div id="review_form">
                                                             <div id="respond" class="comment-respond">
                                                                 <h3 class="comment-reply-title">Add a review </h3>
-                                                                <form action="#" method="post" id="commentform" class="comment-form">
-                                                                    <p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text"></p>
-                                                                    <p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="text"></p>
+                                                                <form action="" method="post" id="commentform" class="comment-form" autocomplete="off" onsubmit="return false">
+                                                                    <p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="<?=$_SESSION['cusname']?>" readonly></p>
+                                                                    <input type="hidden" name="pro_id" value="<?=$id?>">
+                                                                    <p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="text" value="<?= $_SESSION['cus_email']?>" readonly></p>
                                                                     <p class="comment-form-comment"><label for="comment">Your Review</label><textarea id="comment" name="comment" cols="45" rows="8" aria-required="true"></textarea></p>
                                                                     <p class="form-submit">
-                                                                        <input name="submit" type="submit" id="submit" class="submit" value="Submit">
+                                                                        <input name="submit" type="submit" id="submi_comment" class="submit" value="Submit">
                                                                     </p>
                                                                 </form>
                                                             </div>

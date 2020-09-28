@@ -597,6 +597,41 @@ $(document).ready(function () {
             }
         })
     }
+
+    countCommentNumber();
+    function countCommentNumber() {
+        $.ajax({
+            url : "op/process.php",
+            method : "POST",
+            data : {countCommentNumber:1},
+            success : function(data){
+                $('#commentNumber').text(data);
+            }
+        })
+    };
+
+//comment
+    $('#commentform').on("submit",function () {
+        $.ajax({
+            url : "admin/op/action.php",
+            method : "POST",
+            data : $('#commentform').serialize(),
+            success : function(data){
+                if(data == 'FIELD_EMPTY'){
+                    info("Field Must not be Empty!");
+                }else if(data == 'INSERT'){
+                    success("Thanks for Comment.");
+                    countCommentNumber();
+                }else if(data == 'NOT_INSERT'){
+                    error("Something is Wrong!")
+                }
+            }
+        })
+    });
+
+    var cat_auto_load = setInterval(function () {
+
+    },500);
     //-----------------------------------------------SWAL..
     function test(a) {
         swal("Test", a, "info");

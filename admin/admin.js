@@ -790,6 +790,17 @@ $(document).ready(function(){
             }
         })
     };
+    countTotalProducts();
+    function countTotalProducts() {
+        $.ajax({
+            url : "op/process.php",
+            method : "POST",
+            data : {countTotalProducts:1},
+            success : function(data){
+                $('#totalProducts').text(data);
+            }
+        })
+    };
     countShiftOrder();
     function countShiftOrder() {
         $.ajax({

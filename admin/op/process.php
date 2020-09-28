@@ -468,9 +468,9 @@ if (isset($_POST["front_product"])) {
                 <!-- Shopping items -->
                 <div class="shopping-item">
                     <!-- Image -->
-                    <a href="single-product.php?pid=<?= base64_encode($row['product_id'])?>&<?= md5(time())?>"><img style="height: 210px;width: 343px" class="img-responsive" src="admin/uploads/products/<?=$row['image'] ?>" alt="" /></a>
+                    <a href="single-product.php?pid=<?= base64_encode($row['product_id'])?>"><img style="height: 210px;width: 343px" class="img-responsive" src="admin/uploads/products/<?=$row['image'] ?>" alt="" /></a>
                     <!-- Shopping item name / Heading -->
-                    <h4><a href="single-product.php?pid=<?= base64_encode($row['product_id'])?>&<?= md5(time())?>"><?= $row['productname']?></a><span class="color pull-right">$ <?= $row['price']?></span></h4>
+                    <h4><a href="single-product.php?pid=<?= base64_encode($row['product_id'])?>"><?= $row['productname']?></a><span class="color pull-right">$ <?= $row['price']?></span></h4>
                     <div class="clearfix"></div>
                     <!-- Buy now button -->
                     <div class="visible-xs">
@@ -623,6 +623,10 @@ if(isset($_POST['countNewOrder'])){
 }
 if(isset($_POST['countShiftOrder'])){
     echo $obM->countRow('orders',["status" => 1]);
+    exit();
+}
+if(isset($_POST['countTotalProducts'])){
+    echo $obM->countRow('products',["status" => 0]);
     exit();
 }
 //manage new order

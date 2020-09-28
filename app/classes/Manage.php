@@ -282,4 +282,27 @@ class Manage extends Database
         $count = $res->num_rows;
         return $count;
     }
+
+    public function fetch_data_conditions($table,$where){
+        $sql ="";
+        $conditions = "";
+        foreach($where as $key => $value){
+            //`id` = 'n'
+            $conditions.= $key. "='". $value ."' AND ";
+        }
+        $conditions = substr($conditions,0,-5);
+        $sql .= "SELECT * FROM ".$table . " WHERE ".$conditions;
+        $data = array();
+        $res = mysqli_query($this->con,$sql);
+        $r = $res->num_rows;
+        if( $r>0){
+            while($row = $res->fetch_assoc()){
+                $data[] = $row;
+            }
+            return $data;
+        }else{
+            return false;
+        }
+    }
+
 }

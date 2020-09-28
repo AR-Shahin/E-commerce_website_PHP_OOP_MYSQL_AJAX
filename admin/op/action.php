@@ -496,5 +496,28 @@ if(isset($_POST['get_top_product'])) {
         </li>
     <?php }
 }
-?>
 
+//add comment
+if(isset($_POST['author']) and isset($_POST['comment'])){
+    $cmnt = $_POST['comment'];
+    if(empty($cmnt)){
+        echo "FIELD_EMPTY";
+        exit();
+    }
+    $cusnm = $_POST['author'];
+    $cusem = $_POST['email'];
+    $pro_id =  $_POST['pro_id'];
+    $date = date('Y-m-d H:i:s');
+    $cm = $ob->insert_record('comments',["cus_name" => $cusnm,"cus_email"=>$cusem,"pro_id" => $pro_id,"date" => $date,"comment" =>$cmnt]);
+    if($cm){
+        echo "INSERT";
+    }else{
+        echo 'NOT_INSERT';
+    }
+    exit();
+}
+
+
+
+
+?>

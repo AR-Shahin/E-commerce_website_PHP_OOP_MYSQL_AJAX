@@ -53,12 +53,12 @@ if(!isset($_SESSION['user_id'])){
         <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12">
             <div class="card">
                 <div class="card-body">
-                    <h5 class="text-muted">Avg. Revenue Per User</h5>
+                    <h5 class="text-muted">Total Products</h5>
                     <div class="metric-value d-inline-block">
-                        <h1 class="mb-1">$28000</h1>
+                        <h1 class="mb-1 ml-5" style="text-align: center;color: red;" id="totalProducts"></h1>
                     </div>
-                    <div class="metric-label d-inline-block float-right text-secondary font-weight-bold">
-                        <span>-2.00%</span>
+                    <div class="metric-label d-inline-block float-right text-primary font-weight-bold">
+                        <span>Active</span>
                     </div>
                 </div>
                 <div id="sparkline-revenue4"><canvas width="232" height="100" style="display: inline-block; width: 232.578px; height: 100px; vertical-align: top;"></canvas></div>
