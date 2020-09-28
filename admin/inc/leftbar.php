@@ -25,7 +25,7 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link <?= $page == 'brand.php' ? 'active' : '' ?>" href="#" data-toggle="collapse" data-target="#submenu-brand" aria-controls="submenu-2"><i class="fa fa-fw fa-rocket"></i>Brand</a>
+                        <a class="nav-link <?= $page == 'brand.php' ? 'active' : '' ?>" href="#" data-toggle="collapse" data-target="#submenu-brand" aria-controls="submenu-2"><i class="fa fas fa-shopping-bag"></i>Brand</a>
                         <div id="submenu-brand" class="collapse submenu <?= $page == 'brand.php' ? 'show' : '' ?>" style="">
                             <ul class="nav flex-column">
                                 <li class="nav-item active">
@@ -35,7 +35,7 @@
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link <?= $page == 'addproduct.php' ? 'active' : '' ?> <?= $page == 'manageproduct.php' ? 'active' : '' ?>" href="#" data-toggle="collapse" data-target="#submenu-product" aria-controls="submenu-2"><i class="fa fa-fw fa-rocket"></i>Product</a>
+                        <a class="nav-link <?= $page == 'addproduct.php' ? 'active' : '' ?> <?= $page == 'manageproduct.php' ? 'active' : '' ?>" href="#" data-toggle="collapse" data-target="#submenu-product" aria-controls="submenu-2"><i class="fa fas fa-database"></i>Product</a>
                         <div id="submenu-product" class="collapse submenu <?= $page == 'addproduct.php' ? 'show' : '' ?> <?= $page == 'manageproduct.php' ? 'show' : '' ?>" style="">
                             <ul class="nav flex-column">
                                 <li class="nav-item active">
@@ -43,6 +43,24 @@
                                 </li>
                                 <li class="nav-item active">
                                     <a class="nav-link <?= $page == 'manageproduct.php' ? 'active' : '' ?>" href="manageproduct.php">Manage Product</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link <?= $page == 'manageorder.php' ? 'active' : '' ?> <?= $page == 'allorder.php' ? 'active' : '' ?>  <?= $page == 'shiftedorder.php' ? 'active' : '' ?> <?= $page == 'neworder.php' ? 'active' : '' ?>" href="#" data-toggle="collapse" data-target="#submenu-order" aria-controls="submenu-2"><i class="fa far fa-hdd"></i>Order</a>
+                        <div id="submenu-order" class="collapse submenu <?= $page == 'shiftedorder.php' ? 'show' : '' ?>  <?= $page == 'neworder.php' ? 'show' : '' ?> <?= $page == 'manageorder.php' ? 'show' : '' ?> <?= $page == 'allorder.php' ? 'show' : '' ?>" style="">
+                            <ul class="nav flex-column">
+                                <li class="nav-item active">
+                                    <a class="nav-link <?= $page == 'neworder.php' ? 'active' : '' ?>" href="neworder.php">New Order</a>
+                                </li>
+                                <li class="nav-item active">
+                                    <a class="nav-link <?= $page == 'shiftedorder.php' ? 'active' : '' ?>" href="shiftedorder.php">Shifted Order</a> </li>
+                                <li class="nav-item active">
+                                    <a class="nav-link <?= $page == 'manageorder.php' ? 'active' : '' ?>" href="manageorder.php">Delivery Order</a> </li>
+                                <li class="nav-item active">
+                                    <a class="nav-link <?= $page == 'allorder.php' ? 'active' : '' ?>" href="allorder.php">All Order</a>
                                 </li>
                             </ul>
                         </div>

@@ -127,6 +127,7 @@ class DBoperation extends Database
             return 'NOT_DELETE';
         }
     }
+
 }
 //$ob = new DBoperation();
 //$ob->test();

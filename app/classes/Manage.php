@@ -34,6 +34,18 @@ class Manage extends Database
         if($c == 'search'){
             $sql = "SELECT p.`product_id`,p.productname,c.catname,b.brandname,p.price,p.quantity,p.add_date,p.status,p.`image`,p.`keywords`,p.`type`,p.`description` FROM products p,brands b,categories c WHERE p.`brand_id` = b.`brand_id` AND p.`cat_id` = c.`cat_id` AND `keywords` LIKE '%$key%' AND p.quantity > 0 ORDER BY `product_id` DESC ";
         }
+        if($c == 'newOrder'){
+            $sql ="SELECT orders.*,customers.* FROM orders INNER JOIN customers ON customers.cus_id = orders.cus_id WHERE orders.status = 0 ORDER BY orders.date DESC ".$a["limit"];
+        }
+        if($c == 'manageOrder'){
+            $sql ="SELECT orders.*,customers.* FROM orders INNER JOIN customers ON customers.cus_id = orders.cus_id ORDER BY orders.`odr_id` DESC  ".$a["limit"];
+        }
+        if($c == 'shiftOrder'){
+            $sql = "SELECT orders.*,customers.* FROM orders INNER JOIN customers ON customers.cus_id = orders.cus_id WHERE orders.status = 1 ORDER BY orders.`odr_id` DESC ".$a["limit"];
+        }
+        if($c == 'delivery'){
+            $sql = "SELECT orders.*,customers.* FROM orders INNER JOIN customers ON customers.cus_id = orders.cus_id WHERE orders.status = 2 OR orders.status = 3 ORDER BY orders.`odr_id` DESC ".$a["limit"];
+        }
         #$result = Database::connect($sql);
         $result = $this->con->query($sql) or die($this->con->error);
         $rows = array();
@@ -224,7 +236,7 @@ class Manage extends Database
         }
     }
     public function getAllOrderProduct($id){
-        $sql= "SELECT * FROM `orders` WHERE `status` != 3 AND cus_id = $id ";
+        $sql= "SELECT * FROM `orders` WHERE `status` != 3 AND cus_id = $id ORDER BY odr_id DESC ";
         $data = array();
         $res = mysqli_query($this->con,$sql);
         $r = $res->num_rows;
@@ -255,5 +267,19 @@ class Manage extends Database
         }
         return $rows;
 
+    }
+
+    public function countRow($table,$where){
+        $sql ="";
+        $conditions = "";
+        foreach($where as $key => $value){
+            //`id` = 'n'
+            $conditions.= $key. "='". $value ."' AND ";
+        }
+        $conditions = substr($conditions,0,-5);
+        $sql .= "SELECT * FROM ".$table . " WHERE ".$conditions;
+        $res = $this->con->query($sql);
+        $count = $res->num_rows;
+        return $count;
     }
 }

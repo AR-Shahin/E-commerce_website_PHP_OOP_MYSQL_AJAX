@@ -296,10 +296,6 @@ if(isset($_POST['productname']) and isset($_POST['quantity'])){
             }
         }
     }
-
-
-
-
 }
 
 //manage product
@@ -324,9 +320,9 @@ if (isset($_POST["manageProduct"])) {
                 <td>
                     <?php
                     if($row["status"] == 0){
-                        echo '<a href="#" class="btn btn-success btn-sm">Active</a>';
+                        echo '<a href="#" class="btn btn-success btn-sm active-s" pid ='. $row["product_id"].'>Active</a>';
                     }else{
-                        echo '<a href="#" class="btn btn-danger btn-sm">Inactive</a>';
+                        echo '<a href="#" class="btn btn-danger btn-sm inactive-s" pid='.$row["product_id"].'>Inactive</a>';
                     }
                     ?>
 
@@ -395,7 +391,7 @@ if (isset($_POST["up_productname"])) {
     $type = $_POST['up_type'];
     $price = $_POST['up_price'];
     $quantity = $_POST['up_productquantity'];
-  $id = $_POST['pid'];
+    $id = $_POST['pid'];
     if(!isset($_FILES['up_image']['name'])){
         $product_fields = array(
             "productname" => $productname,
@@ -501,7 +497,7 @@ if (isset($_POST["category_wise_product"])) {
     $cid = $_POST['cat_id'];
     $result = $obM->manageRecordWithPagination("products",1,9,'C',$cid);
     $rows = $result["rows"];
-   # $pagination = $result["pagination"];
+    # $pagination = $result["pagination"];
     if (count($rows) > 0) {
         $n = (((1 - 1) * 5)*2)+1;
 
@@ -521,7 +517,7 @@ if (isset($_POST["category_wise_product"])) {
                     </div>
                     <!-- Shopping item hover block & link -->
                     <div class="item-hover bg-color hidden-xs">
-                     <a id="add_to_cart"  fpid =<?= $row['product_id']?>>Add to cart</a>
+                        <a id="add_to_cart"  fpid =<?= $row['product_id']?>>Add to cart</a>
                     </div>
                 </div> </div>
             <?php
@@ -582,17 +578,21 @@ if (isset($_POST["shop_Page_Product"])) {
         foreach ($rows as $row) {
             ?>
             <div class="col-xs-12 col-sm-6 col-md-4 product-item filter-featured">
-            <div class="product-img">
-                <img style="width: 270px;height: 260px;" src="admin/uploads/products/<?=$row['image'] ?>" alt="product">
-                <div class="product-new">
-                    new
-                </div>
-                <div class="product-hover">
-                    <div class="product-cart">
-                        <a id="add_to_cart" class="btn btn-secondary btn-block" fpid =<?= $row['product_id']?>>Add to cart</a>
+                <div class="product-img">
+                    <img style="width: 270px;height: 260px;" src="admin/uploads/products/<?=$row['image'] ?>" alt="product">
+                    <?php
+                    if($row['status'] == 1){
+                        ?>
+                        <div class="product-new">
+                            new
+                        </div>
+                    <?php } ?>
+                    <div class="product-hover">
+                        <div class="product-cart">
+                            <a id="add_to_cart" class="btn btn-secondary btn-block" fpid =<?= $row['product_id']?>>Add to cart</a>
+                        </div>
                     </div>
                 </div>
-            </div>
             </div>
             <?php
             $n++;
@@ -604,3 +604,148 @@ if (isset($_POST["shop_Page_Product"])) {
     }
 }
 
+//status
+if(isset($_POST['change_status_make_inactive'])){
+    $pid = $_POST['pid'];
+    echo $obM->update_record('products',["product_id" => $pid],["status" => 1]);
+    exit();
+}
+//status
+if(isset($_POST['change_status_make_active'])){
+    $pid = $_POST['pid'];
+    echo $obM->update_record('products',["product_id" => $pid],["status" => 0]);
+    exit();
+}
+//---------------------------------------------ORDER-------------------------------
+if(isset($_POST['countNewOrder'])){
+    echo $obM->countRow('orders',["status" => 0]);
+    exit();
+}
+if(isset($_POST['countShiftOrder'])){
+    echo $obM->countRow('orders',["status" => 1]);
+    exit();
+}
+//manage new order
+if (isset($_POST["get_newOrders"])) {
+    $result = $obM->manageRecordWithPagination("orders",$_POST["pageno"],100,'newOrder');
+    $rows = $result["rows"];
+    $pagination = $result["pagination"];
+    if (count($rows) > 0) {
+        $n = ((($_POST["pageno"] - 1) * 5)*2)+1;
+
+        foreach ($rows as $row) {
+            ?>
+            <tr>
+                <td><?php echo $n; ?></td>
+                <td><?=$row['date'] ?></td>
+                <td>
+                    <a href="#" vid="<?php echo $row['cus_id'];?>" data-toggle="modal" data-target="#customer_details" class="btn btn-link btn-sm view_customer"><?php echo $row['cus_fname'];?></a>
+                </td>
+                <td><?=$row['pro_name'] ?></td>
+                <td><?=$row['price'] ?></td>
+                <td><?=$row['quantity'] ?></td>
+                <td><?=$row['total_amnt'] ?></td>
+                <td><?php if($row['status'] == 0) {echo '<a class="badge badge-warning text-light">New </a>';} ?></td>
+                <td><a href="" class="btn btn-info shift-order btn-xs" oid="<?=$row['odr_id']?>">Shift</a></td>
+            </tr>
+            <?php
+            $n++;
+        }
+        ?>
+        <tr><td colspan="5"><?php echo $pagination; ?></td></tr>
+        <?php
+        exit();
+    }
+}
+
+
+if(isset($_POST['shift_order'])){
+    $oid = $_POST['oid'];
+   echo $obM->update_record('orders',["odr_id" =>$oid],["status" => 1]);
+    exit();
+}
+//manage shift order
+
+if (isset($_POST["get_shiftOrder"])) {
+
+    $result = $obM->manageRecordWithPagination("orders",$_POST["pageno"],50,"shiftOrder");
+    $rows = $result["rows"];
+    $pagination = $result["pagination"];
+    if (count($rows) > 0) {
+        $n = ((($_POST["pageno"] - 1) * 5)*2)+1;
+        foreach ($rows as $row) {
+            ?>
+            <tr>
+                <td><?php echo $n; ?></td>
+                <td>
+                    <a href="#" vid="<?php echo $row['cus_id'];?>" data-toggle="modal" data-target="#customer_details" class="btn btn-link btn-sm view_customer"><?php echo $row['cus_fname'];?></a>
+                </td>
+                <td><?=$row['pro_name'] ?></td>
+                <td><?=$row['price'] ?></td>
+                <td><?=$row['quantity'] ?></td>
+                <td><?=$row['total_amnt'] ?></td>
+                <td><?php if($row['status'] == 1) {echo '<a class="badge badge-info text-light">Shift </a>';} ?></td>
+                <td><a href="" class="btn btn-success shift-delivery btn-xs" oid="<?=$row['odr_id']?>">Delivery</a></td>
+            </tr>
+            <?php
+            $n++;
+        }
+        ?>
+        <tr><td colspan="5"><?php echo $pagination; ?></td></tr>
+        <?php
+        exit();
+    }
+}
+
+
+if(isset($_POST['shift_delivery'])){
+    $oid = $_POST['oid'];
+    echo $obM->update_record('orders',["odr_id" =>$oid],["status" => 2]);
+    exit();
+}
+if(isset($_POST['make_trush_delivery'])){
+    $oid = $_POST['oid'];
+    echo $obM->update_record('orders',["odr_id" =>$oid],["status" => 3]);
+    exit();
+}
+
+if (isset($_POST["get_deliveryOrder"])) {
+
+    $result = $obM->manageRecordWithPagination("orders",$_POST["pageno"],100,"delivery");
+    $rows = $result["rows"];
+    $pagination = $result["pagination"];
+    if (count($rows) > 0) {
+        $n = ((($_POST["pageno"] - 1) * 5)*2)+1;
+        foreach ($rows as $row) {
+            ?>
+            <tr>
+                <td><?php echo $n; ?></td>
+                <td>
+                    <a href="#" vid="<?php echo $row['cus_id'];?>" data-toggle="modal" data-target="#customer_details" class="btn btn-link btn-sm view_customer"><?php echo $row['cus_fname'];?></a>
+                </td>
+                <td><?=$row['pro_name'] ?></td>
+                <td><?=$row['price'] ?></td>
+                <td><?=$row['quantity'] ?></td>
+                <td><?=$row['total_amnt'] ?></td>
+                <td><?php if($row['status'] == 2) { ?>
+                        <a class="badge make-rece badge-warning text-light" oid="<?= $row['odr_id']?>">Deliveried </a>
+                    <?php }
+                else if($row['status'] == 3) {echo '<a class="badge badge-success text-light">Received </a>'; } ?></td>
+            </tr>
+            <?php
+            $n++;
+        }
+        ?>
+        <tr><td colspan="5"><?php echo $pagination; ?></td></tr>
+        <?php
+        exit();
+    }
+}
+
+//Get Cus details
+if (isset($_POST["getCusDetails"])) {
+    $cid = $_POST['cid'];
+    $result = $obM->single_record("customers",["cus_id"=>$cid]);
+    echo json_encode($result);
+    exit();
+}

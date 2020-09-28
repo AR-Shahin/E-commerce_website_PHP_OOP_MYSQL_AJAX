@@ -736,12 +736,187 @@ $(document).ready(function(){
                 }
             })
         }
-
-
     });
 
+    $("body").delegate(".active-s","click",function(e) {
+        e.preventDefault();
+        var pid = $(this).attr("pid");
+        $.ajax({
+            url : "op/process.php",
+            method : "POST",
+            data : {change_status_make_inactive:1,pid:pid},
+            success : function(data){
+                if (data == "UPDATED") {
+                    success("Updated!");
+                }else{
+                    alert(data);
+                }
+            }
+        })
+    });
 
+    $("body").delegate(".inactive-s","click",function(e) {
+        e.preventDefault();
+        var pid = $(this).attr("pid");
+        $.ajax({
+            url : "op/process.php",
+            method : "POST",
+            data : {change_status_make_active:1,pid:pid},
+            success : function(data){
+                if (data == "UPDATED") {
+                    success("Updated!");
+                }else{
+                    alert(data);
+                }
+            }
+        })
+    })
+    //-----------------------------------Manage Order----------------------------
+    var newOrder_autoload_Badge = setInterval(function () {
+        countNewOrder();
+        countShiftOrder()
+    },500);
+    var newOrder_autoload = setInterval(function () {
+        get_newOrders(1);
+    },800);
+    countNewOrder();
+    function countNewOrder() {
+        $.ajax({
+            url : "op/process.php",
+            method : "POST",
+            data : {countNewOrder:1},
+            success : function(data){
+               $('#newOrder').text(data);
+            }
+        })
+    };
+    countShiftOrder();
+    function countShiftOrder() {
+        $.ajax({
+            url : "op/process.php",
+            method : "POST",
+            data : {countShiftOrder:1},
+            success : function(data){
+                $('#shiftOrder').text(data);
+            }
+        })
+    };
+
+    get_newOrders(1);
+    function get_newOrders(pn) {
+        $.ajax({
+            url : "op/process.php",
+            method : "POST",
+            data : {get_newOrders:1,pageno:pn},
+            success : function(data){
+                $('#get_new_order').html(data);
+            }
+        })
+    }
+    $("body").delegate(".page-link","click",function(){
+        var pn = $(this).attr("pn");
+        get_newOrders(pn);
+        clearInterval(newOrder_autoload);
+    });
+//shift order
+    $("body").delegate(".shift-order","click",function(e){
+        e.preventDefault();
+        var oid = $(this).attr("oid");
+        $.ajax({
+            url : "op/process.php",
+            method : "POST",
+            data : {shift_order:1,oid:oid},
+            success : function(data){
+               success("Order Shifted Successfully!");
+                get_newOrders(1);
+                countNewOrder();
+            }
+        })
+    });
+
+    get_shiftOrders(1);
+    function get_shiftOrders(pn) {
+        $.ajax({
+            url : "op/process.php",
+            method : "POST",
+            data : {get_shiftOrder:1,pageno:pn},
+            success : function(data){
+                $('#get_shift_order').html(data);
+            }
+        })
+    }
+    $("body").delegate(".page-link","click",function(){
+        var pn = $(this).attr("pn");
+        get_shiftOrders(pn);
+    });
+
+    //delivery
+    $("body").delegate(".shift-delivery","click",function(e){
+        e.preventDefault();
+        var oid = $(this).attr("oid");
+        $.ajax({
+            url : "op/process.php",
+            method : "POST",
+            data : {shift_delivery:1,oid:oid},
+            success : function(data){
+                success("Order Delivery Successfully!");
+                get_shiftOrders(1);
+                countShiftOrder();
+            }
+        })
+    });
+    get_deliveryOrders(1);
+    function get_deliveryOrders(pn) {
+        $.ajax({
+            url : "op/process.php",
+            method : "POST",
+            data : {get_deliveryOrder:1,pageno:pn},
+            success : function(data){
+                $('#get_delivery_order').html(data);
+            }
+        })
+    }
+    $("body").delegate(".page-link","click",function(){
+        var pn = $(this).attr("pn");
+        get_deliveryOrders(pn);
+    });
+    $("body").delegate(".make-rece","click",function(){
+        var oid = $(this).attr("oid");
+        $.ajax({
+            url : "op/process.php",
+            method : "POST",
+            data : {make_trush_delivery:1,oid:oid},
+            success : function(data){
+                success("Complete!");
+                get_shiftOrders(1);
+                countShiftOrder();
+                get_deliveryOrders(1)
+            }
+        })
+    });
+    $("body").delegate(".view_customer","click",function() {
+        var cid = $(this).attr("vid");
+        $.ajax({
+            url: "op/process.php",
+            method: "POST",
+            dataType: "json",
+            data: {getCusDetails: 1, cid: cid},
+            success: function (data) {
+                $('#cusName').text(data['cus_fname']+" " + data['cus_lname']);
+                $('#cusEmail').text(data['email']);
+                $('#cusPhone').text(data['cus_phone']);
+                $('#cusAdd1').text(data['cus_address']);
+                $('#cusAdd2').text(data['cus_address_2']);
+                $('#cusCity').text(data['cus_city']);
+                $('#cusPcode').text(data['cus_zip']);
+            }
+        })
+    });
+    //  ``, `cus_lname`, `cus_uname`, ``, `cus_pass`, ``, ``, ``, ``, `cus_zip`, `total_order`, `add_date
     //------------------------------------------SWAL--------------------------
+    function success(s) {
+        swal("Success!", s, "success");
+    }
     function swal_something_wrong() {
         swal("Error : )", "Something Wrong", "info");
     }

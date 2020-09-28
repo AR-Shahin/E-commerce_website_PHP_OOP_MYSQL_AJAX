@@ -36,6 +36,8 @@
     <script src="assets/libs/js/main-js.js"></script>
     <!-- chart chartist js -->
     <script src="assets/vendor/charts/chartist-bundle/chartist.min.js"></script>
+
+      <script src="assets/vendor/charts/charts-bundle/Chart.bundle.js"></script>
     <!-- sparkline js -->
     <script src="assets/vendor/charts/sparkline/jquery.sparkline.js"></script>
     <!-- morris js -->
