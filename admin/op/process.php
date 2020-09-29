@@ -629,6 +629,10 @@ if(isset($_POST['countTotalProducts'])){
     echo $obM->countRow('products',["status" => 0]);
     exit();
 }
+if(isset($_POST['countTotalCompleterOrder'])){
+    echo $obM->countRow('orders',["status" => 3]);
+    exit();
+}
 //manage new order
 if (isset($_POST["get_newOrders"])) {
     $result = $obM->manageRecordWithPagination("orders",$_POST["pageno"],100,'newOrder');
@@ -751,5 +755,10 @@ if (isset($_POST["getCusDetails"])) {
     $cid = $_POST['cid'];
     $result = $obM->single_record("customers",["cus_id"=>$cid]);
     echo json_encode($result);
+    exit();
+}
+if(isset($_POST['countTotalSell'])){
+    $sum =  $obM->countColumnSum('orders',"total_amnt",["status" => 3]);
+   echo $sum = $sum + ($sum * 0.1);
     exit();
 }

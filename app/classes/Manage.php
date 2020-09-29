@@ -305,4 +305,23 @@ class Manage extends Database
         }
     }
 
+    public function countColumnSum($table,$column,$where){
+        $sql ="";
+        $sum = 0;
+        $conditions = "";
+        foreach($where as $key => $value){
+            //`id` = 'n'
+            $conditions.= $key. "='". $value ."' AND ";
+        }
+        $conditions = substr($conditions,0,-5);
+        $sql .= "SELECT $column FROM ".$table . " WHERE ".$conditions;
+        $res = $this->con->query($sql);
+        $count = $res->num_rows;
+        if( $count>0){
+            while($row = $res->fetch_assoc()){
+                $sum += $row[$column];
+            }
+            return $sum;
+        }
+    }
 }

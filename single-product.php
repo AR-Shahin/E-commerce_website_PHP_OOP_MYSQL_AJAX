@@ -150,7 +150,7 @@ $ro = $obM->fetch_data_conditions('comments',["pro_id" => $id]);
                                                             ?>
                                                             <li class="comment depth-1">
                                                                 <div class="comment_container">
-                                                                    <img alt="gravatar" src="img/temp-images/com-grav1.jpg" class="avatar photo">
+                                                                    <img alt="gravatar" src="img/user.png" class="avatar photo">
                                                                     <div class="comment-text">
                                                                         <p class="meta">
                                                                             <span class="star-rating" title="Rated 4.00 out of 5">

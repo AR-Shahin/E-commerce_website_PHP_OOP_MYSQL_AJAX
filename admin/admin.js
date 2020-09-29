@@ -801,6 +801,28 @@ $(document).ready(function(){
             }
         })
     };
+    countTotalCompleterOrder();
+    function countTotalCompleterOrder() {
+        $.ajax({
+            url : "op/process.php",
+            method : "POST",
+            data : {countTotalCompleterOrder:1},
+            success : function(data){
+                $('#complete_order').text(data);
+            }
+        })
+    };
+    countTotalSell();
+    function countTotalSell() {
+        $.ajax({
+            url : "op/process.php",
+            method : "POST",
+            data : {countTotalSell:1},
+            success : function(data){
+                $('#total_sell').text(data);
+            }
+        })
+    };
     countShiftOrder();
     function countShiftOrder() {
         $.ajax({
@@ -870,9 +892,11 @@ $(document).ready(function(){
             method : "POST",
             data : {shift_delivery:1,oid:oid},
             success : function(data){
-                success("Order Delivery Successfully!");
+                success("Order On Delivery Successfully!");
                 get_shiftOrders(1);
                 countShiftOrder();
+                countTotalCompleterOrder();
+                countTotalSell();
             }
         })
     });
@@ -923,7 +947,7 @@ $(document).ready(function(){
             }
         })
     });
-    //  ``, `cus_lname`, `cus_uname`, ``, `cus_pass`, ``, ``, ``, ``, `cus_zip`, `total_order`, `add_date
+
     //------------------------------------------SWAL--------------------------
     function success(s) {
         swal("Success!", s, "success");

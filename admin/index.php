@@ -11,12 +11,12 @@ if(!isset($_SESSION['user_id'])){
         <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12">
             <div class="card">
                 <div class="card-body">
-                    <h5 class="text-muted">Total Sell</h5>
+                    <h5 class="text-muted">Total Revenue</h5>
                     <div class="metric-value d-inline-block">
-                        <h1 class="mb-1">$12099</h1>
+                        <h1 class="mb-1 text-info">$<span id="total_sell"></span></h1>
                     </div>
                     <div class="metric-label d-inline-block float-right text-success font-weight-bold">
-                        <span><i class="fa fa-fw fa-arrow-up"></i></span><span>5.86%</span>
+                       <span>With VAT</span>
                     </div>
                 </div>
                 <div id="sparkline-revenue"><canvas width="232" height="100" style="display: inline-block; width: 232.578px; height: 100px; vertical-align: top;"></canvas></div>
@@ -39,12 +39,12 @@ if(!isset($_SESSION['user_id'])){
         <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12">
             <div class="card">
                 <div class="card-body">
-                    <h5 class="text-muted">Refunds</h5>
+                    <h5 class="text-muted">Total Complete Order</h5>
                     <div class="metric-value d-inline-block">
-                        <h1 class="mb-1">0.00</h1>
+                        <h1 class="mb-1 ml-5 text-success" id="complete_order"></h1>
                     </div>
                     <div class="metric-label d-inline-block float-right text-primary font-weight-bold">
-                        <span>N/A</span>
+                        <span>Complete</span>
                     </div>
                 </div>
                 <div id="sparkline-revenue3"><canvas width="232" height="100" style="display: inline-block; width: 232.578px; height: 100px; vertical-align: top;"></canvas></div>
