@@ -187,7 +187,7 @@ $(document).ready(function(){
                         pass.addClass('border-danger');
                         $('#log_pass_error').html("<span class='text-danger'>Password Not Match!</span>");
                     }else if(data == 'SUCCESS_LOGIN'){
-                        window.location.href ="index.php";
+                        window.location.href ="index.php?success";
                     }
                 }
 

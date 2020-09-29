@@ -30,7 +30,7 @@ if(isset($_SESSION['user_id'])){
         </div>
     <?php } ?>
     <div class="card ">
-        <div class="card-header text-center"><a href="index.php"><img class="logo-img" src="assets/images/logo.png" alt="logo"></a><span class="splash-description">Please enter your user information.</span></div>
+        <div class="card-header text-center"><a href="index.php"><img class="logo-img" src="assets/images/black-logo.png" alt="logo"></a><span class="splash-description">Please enter your user information.</span></div>
         <div class="card-body">
             <form action="" method="post" id="login_form" onsubmit="return false" autocomplete="off">
                 <div class="form-group">

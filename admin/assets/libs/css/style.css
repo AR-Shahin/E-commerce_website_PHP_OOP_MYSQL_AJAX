@@ -163,6 +163,7 @@ body {
     color: #71748d;
     background-color: #efeff6;
     -webkit-font-smoothing: antialiased;
+    font-family: 'Roboto', sans-serif;
 }
 
 h1,
@@ -174,6 +175,7 @@ h6 {
     color: #3d405c;
     margin: 0px 0px 15px 0px;
     font-family: 'Circular Std Medium';
+    font-family: 'Roboto', sans-serif;
 }
 
 h1 {
