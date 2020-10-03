@@ -10,19 +10,19 @@
 				<div class="col-md-8">
 					<div class="row">
 						<div class="Contact-Form">
-							<form class="leave-comment contact-form" method="post" action="#" id="cform" autocomplete="on">
+							<form class="leave-comment contact-form"action="" method="post" id="contact_form" onsubmit="return false" autocomplete="off">
 								<div class="Contact-us">
-									<div class="form-input col-md-4">
-										<input type="text" name="name" placeholder="Your Name" required>
+									<div class="form-input col-md-6">
+										<input type="text" name="contact_name" placeholder="Your Name" required>
 									</div>
-									<div class="form-input col-md-4">
-										<input type="email" name="email" placeholder="Email" required>
-									</div>
-									<div class="form-input col-md-4">
-										<input type="text" name="contact_phone" placeholder="Phone">
+									<div class="form-input col-md-6">
+										<input type="email" name="contact_email" placeholder="Email" required>
 									</div>
 									<div class="form-input col-md-12">
-										<textarea class="txt-box textArea" name="message" cols="40" rows="7" id="messageTxt" placeholder="Message" spellcheck="true" required></textarea>
+										<input type="text" name="contact_subject" placeholder="Subject" required>
+									</div>
+									<div class="form-input col-md-12">
+										<textarea class="txt-box textArea" name="contact_message" cols="40" rows="7" id="messageTxt" placeholder="Message" spellcheck="true" required></textarea>
 									</div>
 									<div class="form-submit col-md-12">
 										<input type="submit" class="btn btn-custom-6" value="Send Message">

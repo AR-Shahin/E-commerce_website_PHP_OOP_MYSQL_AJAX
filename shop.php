@@ -13,44 +13,6 @@
 						</div>
 					</div>
 				</div>
-
-				<div class="product-filter">
-					<div class="row">
-						<div class="col-lg-2 col-md-2 col-sm-2">
-							<h5 class="control-label">Sort By:</h5>
-						</div>
-						<div class="col-lg-3 col-md-3 col-sm-4">
-							<select name="price-type" id="input-sort" class="form-control">
-								<option value="">Default</option>
-								<option value="">Name (A - Z)</option>
-								<option value="">Name (Z - A)</option>
-								<option value="">Price (Low > High)</option>
-								<option value="">Price (High > Low)</option>
-								<option value="">Rating (Lowest)</option>
-							</select>
-						</div>
-						<div class="col-lg-2 col-md-2 col-sm-2">
-							<h5 class="control-label">Show:</h5>
-						</div>
-						<div class="col-lg-2 col-md-2 col-sm-2">
-							<select name="value" id="input-sort-name" class="form-control">
-								<option value="">6</option>
-								<option value="">25</option>
-								<option value="">30</option>
-								<option value="">40</option>
-								<option value="">20</option>
-								<option value="">28</option>
-							</select>
-						</div>
-						<div class="col-lg-3 col-md-3 col-sm-2">
-							<div class="button-view">
-								<a  href="#"><i class="fa fa-th-list"></i></a>
-								<a class="special_color" href="#"><i class="fa fa-th"></i></a>
-							</div>
-						</div>
-					</div>
-				</div>
-
 				<div id="shop-all" class="row" style="margin-top:30px;">
                     <div id="shop_page_product"></div>
                     <!-- 	<div class="col-xs-12 col-sm-6 col-md-4 product-item filter-featured">
@@ -84,42 +46,7 @@
 					<h3>Categories</h3>
 
 					<ul id="category-widget">
-
-						<li class="open"><a href="#">Women
-
-							<span class="category-widget-btn"></span></a>
-							<ul>
-								<li><a href="#">Clothing</a></li>
-								<li><a href="#">Shoes</a></li>
-								<li><a href="#">Accessories</a></li>
-								<li><a href="#">sportswear</a></li>
-								<li><a href="#">Maternety</a></li>
-							</ul>
-						</li>
-
-						<li><a href="#">Men
-
-                                  <span class="category-widget-btn">
-                                  </span></a>
-							<ul>
-								<li><a href="#">Suits</a></li>
-								<li><a href="#">Style</a></li>
-								<li><a href="#">Accessories</a></li>
-								<li><a href="#">Watches</a></li>
-								<li><a href="#">Shoes</a></li>
-							</ul>
-						</li>
-
-						<li><a href="#">Girls
-
-                                  <span class="category-widget-btn">
-                                  </span></a>
-							<ul>
-								<li><a href="#">Beauty</a></li>
-								<li><a href="#">Belts</a></li>
-								<li><a href="#">Make-up</a></li>
-								<li><a href="#">Shoes</a></li>
-							</ul>
+						<li id="front_categories"><a href="#">Girls
 						</li>
 					</ul>
 				</div>

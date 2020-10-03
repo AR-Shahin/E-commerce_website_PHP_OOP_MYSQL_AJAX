@@ -4,13 +4,14 @@ use App\classes\User;
 use App\classes\DBoperation;
 use App\classes\Manage;
 use App\classes\Cart;
+use App\classes\Mail;
 session_start();
 $ob = new User();
 $obD = new DBoperation();
 $obM = new Manage();
 $obH = new \App\classes\Helper();
 $obC = new \App\classes\Cart();
-
+$obMail = new Mail();
 //chck usr name
 if(isset($_POST['check_username'])){
     $n = $_POST['username'];
@@ -518,6 +519,27 @@ if(isset($_POST['author']) and isset($_POST['comment'])){
 }
 
 
+//contact_form
+if(isset($_POST['contact_name']) and isset($_POST['contact_email'])){
 
+    $cmnt = $_POST['contact_message'];
+    if(empty($cmnt)){
+        echo "FIELD_EMPTY";
+        exit();
+    }
+    $cuname = $_POST['contact_name'];
+    $cusem = $_POST['contact_email'];
+     $sub = $_POST['contact_subject'];
+    $cm = $ob->insert_record('contact_form',["con_name" => $cuname,"con_email"=>$cusem,"con_subject" => $sub,"con_text" => $cmnt]);
+    if($cm){
+    $obMail->sendMailToAdmin($cuname,$cusem,$sub,$cmnt);
+        echo "INSERT";
+        exit();
+    }else{
+        echo 'NOT_INSERT';
+    }
+    exit();
+}
 
 ?>
+                                

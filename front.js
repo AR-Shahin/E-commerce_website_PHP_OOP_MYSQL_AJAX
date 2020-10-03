@@ -632,6 +632,27 @@ $(document).ready(function () {
     var cat_auto_load = setInterval(function () {
 
     },500);
+
+    //contact form
+     $('#contact_form').on("submit",function (e) {
+        e.preventDefault(); 
+        $.ajax({
+            url : "admin/op/action.php",
+            method : "POST",
+            data : $('#contact_form').serialize(),
+            success : function(data){
+                alert(data);
+                if(data == 'FIELD_EMPTY'){
+                    info("Field Must not be Empty!");
+                }else if(data == 'INSERT'){
+                    success("Mail Sent Successfully.");
+                    countCommentNumber();
+                }else if(data == 'NOT_INSERT'){
+                    error("Something is Wrong!")
+                }
+            }
+        })
+    });
     //-----------------------------------------------SWAL..
     function test(a) {
         swal("Test", a, "info");

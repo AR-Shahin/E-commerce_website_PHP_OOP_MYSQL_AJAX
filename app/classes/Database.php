@@ -19,6 +19,6 @@ class Database
         }
     }
     public function test(){
-        echo 'test';
+        echo 'test from db';
     }
 }

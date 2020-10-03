@@ -91,12 +91,12 @@
                                 </div>
                                 <div class="cell-view">
                                     <div class="payment-methods">
-                                        <a href="#"><img alt="" src="img/payment-method-1.png"></a>
-                                        <a href="#"><img alt="" src="img/payment-method-2.png"></a>
-                                        <a href="#"><img alt="" src="img/payment-method-3.png"></a>
-                                        <a href="#"><img alt="" src="img/payment-method-4.png"></a>
-                                        <a href="#"><img alt="" src="img/payment-method-5.png"></a>
-                                        <a href="#"><img alt="" src="img/payment-method-6.png"></a>
+                                        <a href="#"><img alt="" style="height: 32px;width: 57px" src="img/slide/img1.jpg"></a>
+                                        <a href="#"><img alt="" style="height: 32px;width: 57px" src="img/slide/img3.jpg"></</a>
+                                        <a href="#"><img alt="" style="height: 32px;width: 57px" src="img/slide/img2.jpg"></</a>
+                                        <a href="#"><img alt="" style="height: 32px;width: 57px" src="img/slide/img1.jpg"></</a>
+                                        <a href="#"><img alt="" style="height: 32px;width: 57px" src="img/slide/img2.jpg"></</a>
+                                        <a href="#"><img alt="" style="height: 32px;width: 57px" src="img/slide/img4.jpg"></</a>
                                     </div>
                                 </div>
                             </div>
